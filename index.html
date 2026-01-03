@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge | Waste Not, Feed More</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/stats.js"></script>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 overflow-x-hidden">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <div class="container mx-auto px-6 z-10 text-center">
+            <div class="animate-float">
+                <img src="http://static.photos/food/640x360/1" alt="Food sharing" class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-white transform transition-transform duration-1000 hover:scale-110">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-green-800 mt-8 mb-6 animate-fadeIn">
+                Waste Not, <span class="text-blue-600">Feed More</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-10 animate-fadeIn delay-100">
+                Bridging the gap between food surplus and hunger through technology
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <a href="donate.html"
+       class="animated-btn btn-donate text-white px-8 py-4 rounded-full font-semibold shadow-lg">
+       Donate Food
+    </a>
+
+    <a href="request.html"
+       class="animated-btn btn-request text-white px-8 py-4 rounded-full font-semibold shadow-lg">
+       Request Food
+    </a>
+</div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-feather="chevron-down" class="text-gray-600 w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 animate-slideInLeft">
+                    <div class="bg-red-100 inline-block px-3 py-1 rounded-full text-red-700 mb-4 font-medium">
+                        â— The Problem
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Food Waste in Our Communities</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Every year, 1.3 billion tons of food is wasted globally while 690 million people go hungry. In our local communities:
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-red-500 mr-3 mt-1"></i>
+                            <span>Restaurants discard 22-33% of their food daily</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-red-500 mr-3 mt-1"></i>
+                            <span>Supermarkets throw away edible food due to cosmetic standards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-red-500 mr-3 mt-1"></i>
+                            <span>Events often over-cater by 20-30%</span>
+                        </li>
+                    </ul>
+                    <a href="#survey" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                        View our food waste survey results
+                        <i data-feather="arrow-right" class="ml-2"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2 animate-slideInRight">
+                    <div class="relative">
+                        <div class="w-full h-80 bg-gray-200 rounded-xl overflow-hidden shadow-xl">
+                            <img src="http://static.photos/food/1024x576/2" alt="Food waste" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg w-64 animate-pulse">
+                            <div class="flex items-center">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i data-feather="alert-circle" class="text-red-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900">33% wasted</p>
+                                    <p class="text-sm text-gray-600">of all food produced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="bg-blue-100 inline-block px-3 py-1 rounded-full text-blue-700 mb-4 font-medium">
+                    ðŸ’¡ Our Solution
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How FoodBridge Works</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    A simple three-step process to connect surplus food with those who need it most
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="upload" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">List Surplus Food</h3>
+                    <p class="text-gray-700 text-center">
+                        Restaurants, bakeries, and events can quickly list their surplus food with photos and details through our app.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="map-pin" class="text-blue-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">Locate Nearby</h3>
+                    <p class="text-gray-700 text-center">
+                        NGOs and shelters receive instant notifications and can view available food on an interactive map.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="truck" class="text-purple-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">Efficient Delivery</h3>
+                    <p class="text-gray-700 text-center">
+                        Our optimized routing system ensures food reaches those in need quickly and safely.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="bg-green-100 inline-block px-3 py-1 rounded-full text-green-700 mb-4 font-medium">
+                    ðŸŒ± Our Impact
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Making a Real Difference</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Together, we're reducing waste and fighting hunger in our communities
+                </p>
+            </div>
+
+            <custom-stats></custom-stats>
+
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Environmental Impact</h3>
+                    <p class="text-gray-700 mb-6">
+                        For every meal saved through FoodBridge, we prevent approximately 1.5kg of CO2 emissions from food waste decomposition in landfills.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-green-500 h-4 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <p class="text-sm text-gray-600">75% reduction in food waste for participating businesses</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Community Stories</h3>
+                    <div class="flex items-start mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-medium text-gray-900">Maria's Shelter</p>
+                            <p class="text-gray-600">"FoodBridge helps us feed 50 more people every week with fresh, nutritious meals we couldn't otherwise afford."</p>
+                        </div>
+                    </div>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors inline-flex items-center">
+                        Read more success stories
+                        <i data-feather="arrow-right" class="ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section id="survey" class="py-20 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <div class="bg-purple-100 inline-block px-3 py-1 rounded-full text-purple-700 mb-4 font-medium">
+                        ðŸ“Š Food Waste Survey
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Insights from Our Research</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        We surveyed 500 restaurants and 200 NGOs to understand the food waste and hunger landscape:
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="bar-chart-2" class="text-purple-600"></i>
+                            </div>
+                            <span>82% of restaurants would donate surplus food if the process was simpler</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="bar-chart-2" class="text-purple-600"></i>
+                            </div>
+                            <span>67% of NGOs struggle with inconsistent food supplies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i data-feather="bar-chart-2" class="text-purple-600"></i>
+                            </div>
+                            <span>Food waste reduction could feed 3 billion additional people annually</span>
+                        </li>
+                    </ul>
+                    <a href="survey.html" target="_blank"
+                        class="animated-btn btn-download inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-medium shadow-lg">
+                        Download Full Report
+                        <i data-feather="download" class="ml-2"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-xl shadow-xl">
+                        <div class="h-64 w-full bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
+                            <div class="text-center">
+                                <i data-feather="pie-chart" class="w-12 h-12 text-purple-500 mx-auto mb-2"></i>
+                                <p class="text-gray-600">Interactive survey data visualization</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="text-3xl font-bold text-blue-600 mb-1">82%</p>
+                                <p class="text-sm text-gray-700">Restaurants willing to donate</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-3xl font-bold text-green-600 mb-1">67%</p>
+                                <p class="text-sm text-gray-700">NGOs with food shortages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">
+                Join FoodBridge today and be part of the solution to food waste and hunger in your community.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="donate.html"
+                    class="animated-btn btn-donate text-white px-8 py-4 rounded-full font-semibold shadow-lg">
+                    Donate Food
+                </a>
+                <a href="request.html"
+                    class="animated-btn btn-request text-white px-8 py-4 rounded-full font-semibold shadow-lg">
+                    Request Food
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Initialize particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
+</body>
+</html>
